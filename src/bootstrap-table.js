@@ -1117,8 +1117,8 @@ class BootstrapTable {
 
           if (typeof value === 'string' || typeof value === 'number') {
             if (
-              this.options.strictSearch && `${value}`.toLowerCase() === searchText ||
-              this.options.regexSearch && Utils.regexCompare(value, rawSearchText)
+              (this.options.strictSearch && `${value}`.toLowerCase() === searchText) ||
+              (this.options.regexSearch && Utils.regexCompare(value, rawSearchText))
             ) {
               return true
             } else {
